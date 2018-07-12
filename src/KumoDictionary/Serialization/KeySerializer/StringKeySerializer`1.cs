@@ -4,14 +4,14 @@ using System.Text;
 
 namespace KumoDictionary.Serialization.KeySerializer
 {
-    public class StringKeySerializerResolver<T>
+    internal class StringKeySerializer<T>
     {
         public static Func<T, string> Serialize { get; }
         public static Func<string, T> Deserialize { get; }
 
         public static bool CanSerialize { get; }
 
-        static StringKeySerializerResolver()
+        static StringKeySerializer()
         {
             if (typeof(T).IsEnum)
             {

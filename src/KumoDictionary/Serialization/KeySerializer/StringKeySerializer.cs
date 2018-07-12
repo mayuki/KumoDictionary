@@ -13,9 +13,9 @@ namespace KumoDictionary.Serialization.KeySerializer
 
         public virtual string SerializeAsKey<T>(IKumoDictionaryValueSerializer serializer, T value)
         {
-            if (StringKeySerializerResolver<T>.CanSerialize)
+            if (StringKeySerializer<T>.CanSerialize)
             {
-                return StringKeySerializerResolver<T>.Serialize(value);
+                return StringKeySerializer<T>.Serialize(value);
             }
             else
             {
@@ -32,9 +32,9 @@ namespace KumoDictionary.Serialization.KeySerializer
 
         public virtual T DeserializeFromKey<T>(IKumoDictionaryValueSerializer serializer, string value)
         {
-            if (StringKeySerializerResolver<T>.CanSerialize)
+            if (StringKeySerializer<T>.CanSerialize)
             {
-                return StringKeySerializerResolver<T>.Deserialize(value);
+                return StringKeySerializer<T>.Deserialize(value);
             }
             else
             {
