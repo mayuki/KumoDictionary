@@ -10,6 +10,9 @@ Serverless apps (Azure Functions, AWS Lambda ...) need to store a data sometimes
 
 When you need performance or scalability, you should design an app-specific table and data access patterns. KumoDictionary isn't aiming to do that.
 
+## ⚙ Requirement
+.NET Standard 2.0
+
 ## ✅ Supported functions and capabilities
 - Supports Key-Value-Store backends
     - Microsoft Azure Storage Table
