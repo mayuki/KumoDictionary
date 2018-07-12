@@ -1,9 +1,9 @@
 # KumoDictionary
-System.Collections.Generic.IDictionary&lt;TKey, TValue> in the Cloud
-
 KumoDictionary provides `IDictionary<TKey, TValue>` interface for access to a behind Key-Value-Store (e.g. Azure Storage Table, DynamoDB).
 
-For example, you set a value to KumoDictionary, it serializes the value by MessagePack and writes to Key-Value-Store transparently. It's easy and simple to use.
+When you set a value to KumoDictionary, it serializes the value by [MessagePack](https://github.com/neuecc/MessagePack-CSharp/) and writes to Key-Value-Store transparently. It's easy setup and simple to use.
+
+For example, Serverless apps (Azure Functions, AWS Lambda ...) need to store a data sometimes. However, setting up and accessing a datastore is boring. KumoDictionary helps that.
 
 ![](docs/images/SampleCodeImage.png)
 
