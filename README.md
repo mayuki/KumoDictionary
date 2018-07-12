@@ -3,16 +3,19 @@ KumoDictionary provides `IDictionary<TKey, TValue>` interface for access to a be
 
 When you set a value to KumoDictionary, it serializes the value by [MessagePack](https://github.com/neuecc/MessagePack-CSharp/) and writes to Key-Value-Store transparently. It's easy setup and simple to use.
 
-For example, Serverless apps (Azure Functions, AWS Lambda ...) need to store a data sometimes. However, setting up and accessing a datastore is boring. KumoDictionary helps that.
-
 ![](docs/images/SampleCodeImage.png)
 
-## Supported functions and capabilities
+## 💡 Motivation
+Serverless apps (Azure Functions, AWS Lambda ...) need to store a data sometimes. However, setting up and accessing a datastore is boring. KumoDictionary helps that.
+
+When you need performance or scalability, you should design an app-specific table and data access patterns. KumoDictionary isn't aiming to do that.
+
+## ✅ Supported functions and capabilities
 - Supports Key-Value-Store backends
     - Microsoft Azure Storage Table
     - Amazon DynamoDB
 - Supports serialization for complex types
-    - MessagePack (Default)
+    - MessagePack (Default) 
     - JSON (KumoDictionary.Serialization.Utf8Json)
 - `IDictionary<TKey, TValue>` interface implementation
     - Indexer access (getter/setter)
@@ -20,12 +23,14 @@ For example, Serverless apps (Azure Functions, AWS Lambda ...) need to store a d
     - `Add`, `Remove`, `TryGetValue`, `Clear`, `ContainsKey`, `Contains`
 - Additional `*Async` methods
 
-## Limitations / Not supported features
+## ❌ Limitations / Not supported features
+- High-scalability KVS table design and access
+- Transaction
 - `IDictionary<TKey, TValue>` interface implementation
-    - `Count` property
+    - `Count` property 
     - `ICollection<KeyValuePair<TKey, TValue>>.CopyTo` method
 
-## Quick Start
+## ⚡ Quick Start
 ### Install NuGet Package
 
 - KumoDictionary.AzureStorageTable
@@ -79,7 +84,7 @@ dict["key2"] = new MyClass { ValueA = 5678 };
 Console.WriteLine(dict["key1"].ValueA); // => 1234
 ```
 
-## Best practice / Important note
+## 📝 Best practice / Important note
 ### Using complex typed key carefully.
 You can use complex type as a dictionary key(`TKey`). However, once a complex typed key is serialized, to add fields or properties to the type breaks compatibility.
 
