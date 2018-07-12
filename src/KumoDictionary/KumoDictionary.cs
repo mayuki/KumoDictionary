@@ -86,7 +86,7 @@ namespace KumoDictionary
 
         public bool ContainsKey(TKey key)
         {
-            return ContainsKeyAsync(key).Result;
+            return ContainsKeyAsync(key).GetAwaiter().GetResult();
         }
 
         void ICollection<KeyValuePair<TKey, TValue>>.CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
@@ -101,17 +101,17 @@ namespace KumoDictionary
 
         public bool Remove(TKey key)
         {
-            return RemoveAsync(key).Result;
+            return RemoveAsync(key).GetAwaiter().GetResult();
         }
 
         public bool Remove(KeyValuePair<TKey, TValue> item)
         {
-            return RemoveAsync(item.Key).Result;
+            return RemoveAsync(item.Key).GetAwaiter().GetResult();
         }
 
         public bool TryGetValue(TKey key, out TValue value)
         {
-            var result = TryGetValueAsync(key).Result;
+            var result = TryGetValueAsync(key).GetAwaiter().GetResult();
             value = result.Value;
             return result.Succeeded;
         }
