@@ -3,6 +3,8 @@ KumoDictionary provides `IDictionary<TKey, TValue>` interface for access to a be
 
 When you set a value to KumoDictionary, it serializes the value by [MessagePack](https://github.com/neuecc/MessagePack-CSharp/) and writes to Key-Value-Store transparently. It's easy setup and simple to use.
 
+> **Extra:** "Kumo(雲)" means "cloud" in Japanese.
+
 ![](docs/images/SampleCodeImage.png)
 
 ## 💡 Motivation
@@ -133,8 +135,10 @@ Console.WriteLine("{0}: {1}", dict["KeyA"].GetType(), dict["KeyA"].ToString());
 // Recommend: You should store a value.
 var value = dict["KeyA"];
 Console.WriteLine("{0}: {1}", value.GetType(), value.ToString());
-
 ```
+
+### KumoDictionary will not support Redis as backend.
+If you want to use Redis as store, please consider to use [CloudStructures](https://github.com/neuecc/CloudStructures).
 
 ## License
 MIT License
