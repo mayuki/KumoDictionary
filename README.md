@@ -1,7 +1,7 @@
 # KumoDictionary
-KumoDictionary provides `IDictionary<TKey, TValue>` interface for access to a behind Managed Key-Value-Store (e.g. Azure Storage Table, DynamoDB).
+KumoDictionary provides `IDictionary<TKey, TValue>` interface for access to a behind Managed NoSQL/KVS (e.g. Azure Storage Table, DynamoDB).
 
-When you set a value to KumoDictionary, it serializes the value by [MessagePack](https://github.com/neuecc/MessagePack-CSharp/) and writes to Key-Value-Store transparently.
+When you set a value to KumoDictionary, it serializes the value by [MessagePack](https://github.com/neuecc/MessagePack-CSharp/) and writes to NoSQL/KVS transparently. Also you can read it from the dictionary.
 
 > **Extra:** "Kumo(雲)" means "cloud" in Japanese.
 
