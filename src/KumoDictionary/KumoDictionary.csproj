@@ -9,7 +9,7 @@
     <PackageLicenseUrl>https://github.com/mayuki/KumoDictionary/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/mayuki/KumoDictionary</PackageProjectUrl>
     <Description>KumoDictionary provides IDictionary&lt;TKey, TValue&gt; interface for access to a behind Key-Value-Store (e.g. Azure Storage Table, DynamoDB).</Description>
-    <PackageTags>Dictionary,Azure Storage Table,DynamoDB</PackageTags>
+    <PackageTags>Dictionary,KumoDictionary,Azure Storage Table,DynamoDB</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
