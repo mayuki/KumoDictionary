@@ -24,8 +24,8 @@ namespace KumoDictionary.Serialization
         public T Deserialize<T>(byte[] rawBytes)
         {
             return (EnableLZ4Compression)
-                ? MessagePackSerializer.Deserialize<T>(rawBytes, Resolver)
-                : LZ4MessagePackSerializer.Deserialize<T>(rawBytes, Resolver);
+                ? LZ4MessagePackSerializer.Deserialize<T>(rawBytes, Resolver)
+                : MessagePackSerializer.Deserialize<T>(rawBytes, Resolver);
         }
 
         public void Serialize<T>(Stream stream, T value)
