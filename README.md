@@ -1,7 +1,7 @@
 # KumoDictionary
-KumoDictionary provides `IDictionary<TKey, TValue>` interface for access to a behind Key-Value-Store (e.g. Azure Storage Table, DynamoDB).
+KumoDictionary provides `IDictionary<TKey, TValue>` interface for access to a behind Managed Key-Value-Store (e.g. Azure Storage Table, DynamoDB).
 
-When you set a value to KumoDictionary, it serializes the value by [MessagePack](https://github.com/neuecc/MessagePack-CSharp/) and writes to Key-Value-Store transparently. It's easy setup and simple to use.
+When you set a value to KumoDictionary, it serializes the value by [MessagePack](https://github.com/neuecc/MessagePack-CSharp/) and writes to Key-Value-Store transparently.
 
 > **Extra:** "Kumo(雲)" means "cloud" in Japanese.
 
@@ -31,6 +31,7 @@ When you need performance or scalability, you should design an app-specific tabl
 ## ❌ Limitations / Not supported features
 - High-scalability KVS table design and access
 - Transaction
+- Bulk insert/update
 - `IDictionary<TKey, TValue>` interface implementation
     - `Count` property 
     - `ICollection<KeyValuePair<TKey, TValue>>.CopyTo` method
@@ -50,6 +51,8 @@ $ dotnet add package KumoDictionary.AmazonDynamoDB
 ```
 
 ### Create a DynamoDB table for KumoDictionary (Amazon DynamoDB only)
+
+![](docs/images/DynamoDB-CreateTable.png)
 
 |Primary key|Key name|Key type|
 | --- | --- | --- |
@@ -82,10 +85,10 @@ KumoDictionaryAmazonDynamoDBProvider.UseAsDefault(tableName, dynamoDBClient);
 
 ### Create a instance of `KumoDictionary<TValue>` and set or get values.
 
-Create a instace of `KumoDictionary<TValue>` class and you can use like a `IDictionary<string, TValue>` class!
+Create an instace of `KumoDictionary<TValue>` class with favorite name and you can use like a `IDictionary<string, TValue>` class.
 
 ```csharp
-var dict = new KumoDictionary<MyClass>();
+var dict = new KumoDictionary<MyClass>("dictionaryName1");
 dict["key1"] = new MyClass { ValueA = 1234 };
 dict["key2"] = new MyClass { ValueA = 5678 };
 
@@ -127,7 +130,7 @@ Console.WriteLine(dict[new MyKey { ValueA = 1 }]); // => `KeyNotFoundException`
 **We recommend using a primitive type (string, int, enum ...) for a dictionary key.**
 
 ### Get a value once, use it twice or more.
-Always I/O access occurred when you get a value through a dictionary indexer. If you use the value multiple time in a statement, you should store the value.
+When you get a value through a dictionary indexer, KumoDictionary access silently backend via a network I/O.  If you use the value multiple time in a statement, you should store the value and reuse it.
 
 ```csharp
 var dict = new KumoDictionary<int>("dictionaryName1");
