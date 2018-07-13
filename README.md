@@ -63,6 +63,9 @@ $ dotnet add package KumoDictionary.AmazonDynamoDB
 Set KumoDictionary backend provider as a default provider at the entry point.
 
 ```csharp
+using KumoDictionary;
+using KumoDictionary.Provider;
+
 // Set backend provider for Microsoft Azure Storage Table
 var tableName = "MyTestTable";
 var connectionString = "DefaultEndpointsProtocol=https;AccountName=...";
