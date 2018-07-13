@@ -2,10 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <LangVersion>latest</LangVersion>
+    <Authors>Mayuki Sawatari</Authors>
+    <Copyright>Mayuki Sawatari</Copyright>
+    <Description>This package adds support Microsoft Azure Storage Table backend to KumoDictionary.</Description>
+    <PackageLicenseUrl>https://github.com/mayuki/KumoDictionary/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/mayuki/KumoDictionary</PackageProjectUrl>
+    <PackageTags>Dictionary,Azure,Storage Table,KumoDictionary</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

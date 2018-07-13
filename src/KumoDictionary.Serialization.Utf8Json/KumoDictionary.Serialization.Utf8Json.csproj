@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Authors>Mayuki Sawatari</Authors>
+    <Copyright>Mayuki Sawatari</Copyright>
+    <PackageLicenseUrl>https://github.com/mayuki/KumoDictionary/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/mayuki/KumoDictionary</PackageProjectUrl>
+    <PackageTags>JSON,KumoDictionary</PackageTags>
+    <Description>This package adds support JSON serialization to KumoDictionary.</Description>
   </PropertyGroup>
 
   <ItemGroup>
