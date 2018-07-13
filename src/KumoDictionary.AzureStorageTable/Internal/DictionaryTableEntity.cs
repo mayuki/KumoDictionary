@@ -15,7 +15,7 @@ namespace KumoDictionary.AzureStorageTable.Internal
 
     internal static class DictionaryTableEntity
     {
-        static class EntityTypeResolver<TKey, TValue>
+        public static class EntityTypeResolver<TKey, TValue>
         {
             public static readonly Type Type;
             public static readonly bool IsValueEdmType;
