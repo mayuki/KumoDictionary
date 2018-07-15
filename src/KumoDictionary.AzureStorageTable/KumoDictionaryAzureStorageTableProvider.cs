@@ -12,15 +12,15 @@ namespace KumoDictionary.Provider
         public CloudTable Table { get; }
         public KumoDictionaryAzureStorageTableSettings Settings { get; }
 
-        public KumoDictionaryAzureStorageTableProvider(string connectionString, string tableName, IKumoDictionaryValueSerializer serializer)
+        public KumoDictionaryAzureStorageTableProvider(string connectionString, string tableName, IKumoDictionaryValueSerializer serializer = null)
             : this(GetCloudTable(connectionString, tableName), serializer)
         {
         }
 
-        public KumoDictionaryAzureStorageTableProvider(CloudTable table, IKumoDictionaryValueSerializer serializer)
+        public KumoDictionaryAzureStorageTableProvider(CloudTable table, IKumoDictionaryValueSerializer serializer = null)
         {
             Table = table;
-            Settings = new KumoDictionaryAzureStorageTableSettings(serializer);
+            Settings = new KumoDictionaryAzureStorageTableSettings(serializer ?? KumoDictionaryValueSerializer.Default);
         }
 
         private static CloudTable GetCloudTable(string connectionString, string tableName)

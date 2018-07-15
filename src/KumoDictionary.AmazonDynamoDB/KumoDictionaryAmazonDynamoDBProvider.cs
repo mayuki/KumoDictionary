@@ -12,10 +12,10 @@ namespace KumoDictionary.Provider
         public KumoDictionaryAmazonDynamoDBSettings Settings { get; }
         public AmazonDynamoDBClient DynamoDBClient { get; }
 
-        public KumoDictionaryAmazonDynamoDBProvider(string tableName, AmazonDynamoDBClient dynamoDBClient, IKumoDictionaryValueSerializer serializer)
+        public KumoDictionaryAmazonDynamoDBProvider(string tableName, AmazonDynamoDBClient dynamoDBClient, IKumoDictionaryValueSerializer serializer = null)
         {
             DynamoDBClient = dynamoDBClient;
-            Settings = new KumoDictionaryAmazonDynamoDBSettings(tableName, serializer);
+            Settings = new KumoDictionaryAmazonDynamoDBSettings(tableName, serializer ?? KumoDictionaryValueSerializer.Default);
         }
 
         public static void UseAsDefault(string tableName, AmazonDynamoDBClient dynamoDBClient, Action<KumoDictionaryAmazonDynamoDBProvider> configure = null)
