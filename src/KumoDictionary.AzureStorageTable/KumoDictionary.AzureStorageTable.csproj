@@ -10,11 +10,12 @@
     <PackageProjectUrl>https://github.com/mayuki/KumoDictionary</PackageProjectUrl>
     <PackageTags>Dictionary,Azure,Storage Table,KumoDictionary</PackageTags>
     <Version>1.1.0</Version>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.1" />
-    <PackageReference Include="WindowsAzure.Storage" Version="9.3.0" />
+    <PackageReference Include="WindowsAzure.Storage" Version="8.6.0" />
   </ItemGroup>
 
   <ItemGroup>
