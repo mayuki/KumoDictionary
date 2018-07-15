@@ -12,6 +12,9 @@ Serverless apps (Azure Functions, AWS Lambda ...) need to store a data sometimes
 
 When you need performance or scalability, you should design an app-specific table and data access patterns. KumoDictionary isn't aiming to do that.
 
+## 🤔 "I think bad idea using IDictionary via a network."
+That's right. Normally, IDictionary users don't expect calling methods are blocked. but **I focused on making simpler to use data store when I am developing small tools in the cloud environments.** And I hope low-latency and low-load in use-cases.
+
 ## ⚙ Requirement
 .NET Standard 2.0
 
